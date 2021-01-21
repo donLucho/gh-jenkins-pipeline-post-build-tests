@@ -1,0 +1,8 @@
+{
+  "name": "gh-jenkins-pipeline-post-build-tests",
+  "description": "Experimenting with Post-Build Functionality",
+  "scripts": {},
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "ISC"
+}
