@@ -12,6 +12,21 @@ pipeline {
 
   stages {
     
+    stage("error") {
+
+      when {
+        expression {
+          params.runDerrpage == true
+        }
+      }
+
+      steps {
+        echo "Uh, oh! Now you've done it!"
+        error "The test has failed. TRY AGAIN!"
+      }
+
+    }
+    
     stage("build") {
 
       when {
@@ -36,21 +51,6 @@ pipeline {
       steps {
         echo "Testing the application..."
       }
-    }
-
-    stage("error") {
-
-      when {
-        expression {
-          params.runDerrpage == true
-        }
-      }
-
-      steps {
-        echo "Uh, oh! Now you've done it!"
-        error "The test has failed. TRY AGAIN!"
-      }
-
     }
 
     stage("deploy") {
